@@ -1,11 +1,11 @@
 import movies from "./movies.json";
-import MovieCard from "./assets/MovieCard";
+import MovieCard from "./MovieCard";
+import styles from "./MoviesGrid.module.css";
 
 function MoviesGrid() {
   return (
-    <ul>
+    <ul className={styles.moviesGrid}>
       {movies.map((movie) => {
-        // return <li key={movie.id}>{movie.title}</li>;
         return <MovieCard movie = {movie} key={movie.id}/>
       })}
     </ul>
