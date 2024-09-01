@@ -1,0 +1,9 @@
+.title {
+  text-align: center;
+  text-shadow: 3px 3px 5px #0d47a1,
+    /* Sombra azul oscuro */ -3px -3px 8px #1976d2,
+    /* Sombra azul medio */ 2px 2px 12px #42a5f5,
+    /* Resplandor azul claro */ 0px 0px 15px #90caf9,
+    /* Brillo azul suave */ 0px 0px 20px #bbdefb,
+    /* Halo de luz azul */ 0px 0px 30px #e3f2fd;
+}
