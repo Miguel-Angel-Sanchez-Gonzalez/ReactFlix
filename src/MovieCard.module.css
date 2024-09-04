@@ -1,9 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
 .movieCard {
   list-style: none;
   font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 .movieImage {
   border-radius: 20px;
   background-color: azure;
+}
+
+@media (max-width: 560px) {
+  .movieImage {
+    width: 90%;
+    height: auto;
+  }
 }
