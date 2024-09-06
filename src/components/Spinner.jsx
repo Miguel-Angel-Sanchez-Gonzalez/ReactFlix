@@ -1,9 +1,10 @@
 import { ImSpinner2 } from "react-icons/im";
+import styles from "./Spinner.module.css";
 
 export function Spinner() {
   return (
-    <div>
-      <ImSpinner2 />
+    <div className={styles.spinner}>
+      <ImSpinner2 className={styles.spinning} size={50} />
     </div>
-  )
+  );
 }
