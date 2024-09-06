@@ -1,4 +1,3 @@
-import movies from "./movies.json";
 import MovieCard from "./MovieCard";
 import styles from "./MoviesGrid.module.css";
 import { useEffect, useState } from "react";

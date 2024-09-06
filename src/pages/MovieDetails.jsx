@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import movie from "./movie.json";
 import styles from "./MovieDetails.module.css";
 import { useEffect, useState } from "react";
 import { get } from "../utils/httpClient";
