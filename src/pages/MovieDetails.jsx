@@ -12,12 +12,12 @@ export function MovieDetails() {
   useEffect(() => {
     setIsLoading(true);
     get("/movie/" + movieId).then((data) => {
-      setIsLoading(false);
       setMovie(data);
+      setIsLoading(false);
     });
   }, [movieId]);
 
-  if (true) {
+  if (isLoading) {
     return <Spinner />;
   }
 
