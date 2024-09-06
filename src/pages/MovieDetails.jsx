@@ -2,16 +2,24 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import styles from "./MovieDetails.module.css";
 import { useEffect, useState } from "react";
 import { get } from "../utils/httpClient";
+import { Spinner } from "../components/Spinner";
 
 export function MovieDetails() {
   const { movieId } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
+    setIsLoading(true);
     get("/movie/" + movieId).then((data) => {
+      setIsLoading(false);
       setMovie(data);
     });
   }, [movieId]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   if (!movie) {
     return null;
