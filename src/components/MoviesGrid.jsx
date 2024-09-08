@@ -20,20 +20,17 @@ function MoviesGrid() {
       ? "/search/movie?query=" + search + "&page=" + page
       : "/discover/movie?page=" + page;
     get(searchUrl).then((data) => {
-      setMovies(data.results);
+      setMovies((prevMovies) => prevMovies.concat(data.results));
       setIsLoading(false);
     });
   }, [search, page]);
-
-  if (isLoading) {
-    return <Spinner />;
-  }
 
   return (
     <InfiniteScroll
       dataLength={movies.length}
       hasMore={true}
       next={() => setPage((prevPage) => prevPage + 1)}
+      loader={<Spinner />}
     >
       <ul className={styles.moviesGrid}>
         {movies.map((movie) => {
