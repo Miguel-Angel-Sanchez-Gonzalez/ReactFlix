@@ -27,8 +27,12 @@ export function Search() {
           className={styles.searchInput}
           placeholder="Search Movie"
           type="text"
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
+          value={searchText} 
+          onChange={(e) => {
+            const value = e.target.value;
+            setSearchText(value);
+            history.push("/?search=" + value);
+          }}
         ></input>
         <button className={styles.searchButton} type="submit">
           <GoSearch size={20} />
