@@ -23,7 +23,7 @@ export function Search() {
   return (
     <form className={styles.searchContainer} onSubmit={handleSubmit}>
       <div className={styles.searchBox}>
-        <input
+        <input 
           className={styles.searchInput}
           placeholder="Search Movie"
           type="text"
@@ -34,9 +34,7 @@ export function Search() {
             history.push("/?search=" + value);
           }}
         ></input>
-        <button className={styles.searchButton} type="submit">
-          <GoSearch size={20} />
-        </button>
+          <GoSearch size={20} className={styles.searchButton} />
       </div>
     </form>
   );
