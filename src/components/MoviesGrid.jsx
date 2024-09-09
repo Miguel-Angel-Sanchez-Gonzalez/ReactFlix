@@ -10,6 +10,7 @@ function MoviesGrid() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
+  const [hasMore, sethasMore] = useState(true);
 
   const query = useQuery();
   const search = query.get("search");
@@ -21,6 +22,7 @@ function MoviesGrid() {
       : "/discover/movie?page=" + page;
     get(searchUrl).then((data) => {
       setMovies((prevMovies) => prevMovies.concat(data.results));
+      sethasMore(data.page < data.total_pages);
       setIsLoading(false);
     });
   }, [search, page]);
@@ -28,7 +30,7 @@ function MoviesGrid() {
   return (
     <InfiniteScroll
       dataLength={movies.length}
-      hasMore={true}
+      hasMore={hasMore}
       next={() => setPage((prevPage) => prevPage + 1)}
       loader={<Spinner />}
     >
