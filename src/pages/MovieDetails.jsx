@@ -3,6 +3,8 @@ import styles from "./MovieDetails.module.css";
 import { useEffect, useState } from "react";
 import { get } from "../utils/httpClient";
 import { Spinner } from "../components/Spinner";
+import { getMoviePoster } from "../utils/getMoviePoster";
+
 
 export function MovieDetails() {
   const { movieId } = useParams();
@@ -25,7 +27,7 @@ export function MovieDetails() {
     return null;
   }
 
-  const imageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+  const imageUrl = getMoviePoster(movie.poster_path, 500);
   return (
     <div className={styles.detailsContainer}>
       <img
